@@ -1,10 +1,10 @@
-#include <iostream>
-using namespace std;
+    #include <iostream>
+    using namespace std;
 
-int main() {
+    int main() {
     int a, b, c;
 
-    // Entrada dos três números
+    
     cout << "Digite três números diferentes: ";
     cin >> a >> b >> c;
 
@@ -26,4 +26,4 @@ int main() {
     }
 
     return 0;
-}
+    }
