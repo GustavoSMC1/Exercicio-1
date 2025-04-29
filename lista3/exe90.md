@@ -20,7 +20,7 @@
         cin >> numero;
 
         if (i == 0) {
-            maior = menor = numero;  // Inicializa com o primeiro número
+            maior = menor = numero;  
         } else {
             if (numero > maior)
                 maior = numero;
