@@ -82,3 +82,49 @@ int main() {
 
     return 0;
 }
+
+struct para organizar dados da locação.
+
+map<string, int> para contar aluguéis por modelo.
+
+map<string, float> para somar o valor recebido por modelo.
+
+vector e sort com lambda para ordenar os modelos.
+
+iomanip para formatação de saída com casas decimais e colunas alinhadas.
+
+Entradas Iniciais
+
+Lê o valor inicial do caixa.
+
+Lê a quantidade de locações (máximo de 300).
+
+Estrutura para Armazenar Locação
+
+Struct Locacao: armazena placa, modelo, dias, valor.
+
+Leitura das locações
+
+Para cada locação:
+
+Lê os dados.
+
+Soma ao total recebido.
+
+Atualiza a contagem de aluguéis por modelo.
+
+Acumula o valor recebido por modelo.
+
+Relatório
+
+Calcula o valor final do caixa.
+
+Ordena os modelos mais alugados (por quantidade de aluguéis).
+
+Exibe os 10 modelos mais alugados com:
+
+Nome do modelo
+
+Quantidade de aluguéis
+
+Total recebido por modelo
