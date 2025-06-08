@@ -39,14 +39,59 @@ int main() {
 }
 
 
-O computador escolhe aleatoriamente um número entre 1 e 100.
+Inicialização:
 
-O jogador tenta adivinhar o número digitando palpites.
+A função srand(time(0)) define a semente do gerador de números aleatórios, garantindo que a cada execução o número secreto seja diferente.
 
-A cada tentativa, o programa informa se o número secreto é maior ou menor que o palpite.
+A variável jogarNovamente é usada para controlar se o jogo deve reiniciar.
 
-Quando o jogador acerta, o programa mostra quantas tentativas foram necessárias.
+Laço de Jogo Principal:
 
-Depois disso, o jogador pode escolher se deseja jogar novamente.
+Enquanto jogarNovamente for 's' ou 'S', o programa continua a executar novas rodadas do jogo.
 
-O código usa rand() para gerar números aleatórios e estruturas de repetição (do-while e while) para controlar o jogo.
+Um número aleatório entre 1 e 100 é gerado usando rand() % 100 + 1.
+
+Loop de Tentativas:
+
+O jogador é solicitado a digitar um palpite.
+
+O programa compara o palpite com o número secreto e fornece dicas: se é maior ou menor.
+
+O número de tentativas é contado.
+
+O loop se encerra quando o jogador acerta.
+
+Feedback e Repetição:
+
+Ao acertar, o programa exibe uma mensagem, diferenciando se o jogador acertou de primeira ou após várias tentativas.
+
+Em seguida, o jogador pode escolher jogar novamente ou sair.
+
+Suposições Necessárias
+O número secreto está sempre entre 1 e 100.
+
+O usuário fornece uma entrada numérica válida (não trata entradas inválidas).
+
+A interação é feita via terminal (modo texto).
+
+A entrada de repetição do jogo é uma letra ('s', 'S', 'n', 'N').}
+
+Exemplos de Execução
+Pensei em um número entre 1 e 100. Adivinhe qual é!
+Seu palpite: 50
+Não, o número que pensei é maior. Tente outro.
+Seu palpite: 75
+Não, o número que pensei é menor. Tente outro.
+Seu palpite: 62
+Não, o número que pensei é maior. Tente outro.
+Seu palpite: 68
+Isso! Você acertou com 4 tentativas!
+Quer jogar de novo (s/n)? n
+Ok, nos vemos mais tarde quando quiser jogar de novo.
+
+Exemplo 2: Jogador acerta de primeira
+Pensei em um número entre 1 e 100. Adivinhe qual é!
+Seu palpite: 27
+Isso! Seu sortudo, acertou de primeira!
+Quer jogar de novo (s/n)? n
+Ok, nos vemos mais tarde quando quiser jogar de novo.
