@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstdlib>  
+#include <ctime>     
+using namespace std;
+
+int main() {
+    int testes[] = {50, 100, 500, 1000, 10000, 100000};  
+    srand(time(0));  
+
+    for (int t = 0; t < 6; ++t) {
+        int totalLancamentos = testes[t];
+        int contador = 0;
+
+        for (int i = 0; i < totalLancamentos; ++i) {
+            int dado1 = rand() % 6 + 1;
+            int dado2 = rand() % 6 + 1;
+
+            if (dado1 == 6 && dado2 == 6)
+                contador++;
+        }
+
+        double probabilidade = (double)contador / totalLancamentos;
+        cout << "Lançamentos: " << totalLancamentos
+             << " | Quantidade de 6 e 6: " << contador
+             << " | Probabilidade: " << probabilidade << endl;
+    }
+
+    return 0;
+}
+
+O programa simula o lançamento de dois dados usando rand().
+
+Conta quantas vezes os dois dados saem com o número 6 ao mesmo tempo.
+
+Testa essa probabilidade para diferentes quantidades de lançamentos: 50, 100, 500, até 100.000.
+
+Ao final, compara a frequência observada com a probabilidade teórica (1/36 ≈ 0.0277).
+
+Usa srand(time(0)) para garantir aleatoriedade a cada execução.
