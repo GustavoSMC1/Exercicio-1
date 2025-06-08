@@ -70,3 +70,21 @@ Exibe '*' nas posições com bomba.
 
 Exibe números onde não há bomba, indicando quantas bombas estão ao redor.
 
+Definições Iniciais:
+const int N = 20; Define o tamanho da matriz: 20x20.
+bool dentroDosLimites(int i, int j) Função auxiliar para verificar se (i,j) está dentro dos limites da matriz.
+Leitura da Matriz:
+char campo[N][N]; Matriz de entrada que armazena os símbolos (* ou -).
+int resultado[N][N] = {0}; Matriz de saída, inicialmente com tudo zero. Usada para armazenar a quantidade de bombas vizinhas.
+
+if (campo[i][j] == '*') {
+    resultado[i][j] = -1;
+Se for bomba, a posição recebe -1 na matriz resultado.
+if (dentroDosLimites(ni, nj) && campo[ni][nj] != '*')
+    resultado[ni][nj]++;
+Para cada vizinho, se estiver dentro da matriz e não for bomba, aumenta o contador.
+
+
+
+
+
