@@ -47,3 +47,26 @@ int main() {
 
     return 0;
 }
+
+
+Leitura da matriz
+O usuário preenche uma matriz 20x20 com '*' e '-'.
+
+Inicialização
+Uma segunda matriz (resultado) é criada para armazenar a contagem de bombas vizinhas, iniciada com zeros.
+
+Cálculo de vizinhos
+Usam-se vetores dx e dy para verificar as 8 direções ao redor de cada célula.
+
+Processamento
+
+Se a célula tem bomba (*), marca -1 no resultado.
+
+Para cada vizinho, se não for bomba, incrementa o contador.
+
+Impressão
+
+Exibe '*' nas posições com bomba.
+
+Exibe números onde não há bomba, indicando quantas bombas estão ao redor.
+
