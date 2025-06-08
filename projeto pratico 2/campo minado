@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+const int N = 20;
+
+bool dentroDosLimites(int i, int j) {
+    return (i >= 0 && i < N && j >= 0 && j < N);
+}
+
+int main() {
+    char campo[N][N];
+    int resultado[N][N] = {0};
+
+    cout << "Digite a matriz 20x20 (use '*' para bomba e '-' para vazio):\n";
+    for (int i = 0; i < N; ++i)
+        for (int j = 0; j < N; ++j)
+            cin >> campo[i][j];
+
+    int dx[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
+    int dy[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
+
+
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            if (campo[i][j] == '*') {
+                resultado[i][j] = -1; 
+                for (int k = 0; k < 8; ++k) {
+                    int ni = i + dx[k];
+                    int nj = j + dy[k];
+                    if (dentroDosLimites(ni, nj) && campo[ni][nj] != '*')
+                        resultado[ni][nj]++;
+                }
+            }
+        }
+    }
+
+    cout << "\nResultado (matriz com contagem de bombas ao redor):\n";
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            if (resultado[i][j] == -1)
+                cout << "* ";
+            else
+                cout << resultado[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
