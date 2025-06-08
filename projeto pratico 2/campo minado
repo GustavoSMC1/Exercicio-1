@@ -49,40 +49,52 @@ int main() {
 }
 
 
-Leitura da matriz
-O usuário preenche uma matriz 20x20 com '*' e '-'.
+O problema consiste em criar uma simulação simplificada do jogo Campo Minado. O programa deve:
 
-Inicialização
-Uma segunda matriz (resultado) é criada para armazenar a contagem de bombas vizinhas, iniciada com zeros.
+Ler uma matriz 20x20 contendo apenas dois caracteres:
 
-Cálculo de vizinhos
-Usam-se vetores dx e dy para verificar as 8 direções ao redor de cada célula.
+'*' → célula com bomba
 
-Processamento
+'-' → célula vazia (sem bomba)
 
-Se a célula tem bomba (*), marca -1 no resultado.
+Gerar como saída uma nova matriz de inteiros onde:
 
-Para cada vizinho, se não for bomba, incrementa o contador.
+Cada célula mostra a quantidade de bombas ao redor (máximo 8 vizinhos)
 
-Impressão
+Células que contêm bombas continuam marcadas como *
 
-Exibe '*' nas posições com bomba.
+1. Leitura da matriz
+A matriz campo de tamanho 20x20 é preenchida com os caracteres digitados pelo usuário.
 
-Exibe números onde não há bomba, indicando quantas bombas estão ao redor.
+2. Inicialização da matriz resultado
+Outra matriz resultado do mesmo tamanho é criada e iniciada com todos os valores iguais a zero. Ela armazenará o número de bombas ao redor de cada célula.
 
-Definições Iniciais:
-const int N = 20; Define o tamanho da matriz: 20x20.
-bool dentroDosLimites(int i, int j) Função auxiliar para verificar se (i,j) está dentro dos limites da matriz.
-Leitura da Matriz:
-char campo[N][N]; Matriz de entrada que armazena os símbolos (* ou -).
-int resultado[N][N] = {0}; Matriz de saída, inicialmente com tudo zero. Usada para armazenar a quantidade de bombas vizinhas.
+3. Vetores de vizinhança
+São utilizados dois vetores (dx e dy) que representam os deslocamentos relativos das 8 direções vizinhas (diagonal, cima, baixo, esquerda e direita).
 
-if (campo[i][j] == '*') {
-    resultado[i][j] = -1;
-Se for bomba, a posição recebe -1 na matriz resultado.
-if (dentroDosLimites(ni, nj) && campo[ni][nj] != '*')
-    resultado[ni][nj]++;
-Para cada vizinho, se estiver dentro da matriz e não for bomba, aumenta o contador.
+4. Processamento
+O programa percorre toda a matriz:
+
+Quando encontra uma bomba (*), marca a posição correspondente em resultado com -1.
+
+Para cada uma das 8 posições ao redor dessa bomba, verifica:
+
+Se está dentro da matriz.
+
+Se não é outra bomba.
+
+Se sim, incrementa o valor naquela posição da matriz resultado.
+
+5. Impressão
+O programa imprime a matriz resultado, substituindo valores -1 por * (para manter a posição da bomba visível).
+
+
+Dificuldades 
+Foi necessário usar os vetores dx e dy para evitar múltiplas condições e deixar o código limpo.
+
+A função dentroDosLimites foi criada para evitar acesso fora da matriz (segmentation fault).
+
+
 
 
 
