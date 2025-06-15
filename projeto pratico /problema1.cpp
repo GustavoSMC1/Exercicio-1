@@ -28,6 +28,8 @@ int main() {
     return 0;
 }
 
+
+
 O programa realiza as seguintes operações:
 
 Define um vetor com diferentes quantidades de lançamentos de dados a serem testados: {50, 100, 500, 1000, 10000, 100000}.
