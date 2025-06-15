@@ -49,6 +49,7 @@ int main() {
 }
 
 
+
 O problema consiste em criar uma simulação simplificada do jogo Campo Minado. O programa deve:
 
 Ler uma matriz 20x20 contendo apenas dois caracteres:
