@@ -83,6 +83,8 @@ int main() {
     return 0;
 }
 
+
+
 struct para organizar dados da locação.
 
 map<string, int> para contar aluguéis por modelo.
