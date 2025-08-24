@@ -1,0 +1,25 @@
+import random
+
+def gerar_numero():
+    return random.randint(1, 1000)
+
+
+numero_secreto = gerar_numero()
+tentativas = 10
+acertou = False
+
+print("Descubra o número entre 1 e 1000! Você tem 10 tentativas.")
+
+for i in range(tentativas):
+    palpite = int(input(f"Tentativa {i+1}: "))
+    if palpite == numero_secreto:
+        print("🎉 Parabéns! Você acertou!")
+        acertou = True
+        break
+    elif palpite < numero_secreto:
+        print("O número é MAIOR.")
+    else:
+        print("O número é MENOR.")
+
+if not acertou:
+    print(f"❌ Suas tentativas acabaram! O número era {numero_secreto}.")
