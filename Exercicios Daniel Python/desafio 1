@@ -1,0 +1,23 @@
+def calcular(a, b, operacao):
+    if operacao == "soma":
+        return a + b
+    elif operacao == "subtracao":
+        return a - b
+    elif operacao == "produto":
+        return a * b
+    elif operacao == "divisao":
+        if b != 0:
+            return a / b
+        else:
+            return "Erro: divisão por zero!"
+    else:
+        return "Operação inválida!"
+
+
+x = float(input("Digite o primeiro número: "))
+y = float(input("Digite o segundo número: "))
+
+print("Soma:", calcular(x, y, "soma"))
+print("Subtração:", calcular(x, y, "subtracao"))
+print("Produto:", calcular(x, y, "produto"))
+print("Divisão:", calcular(x, y, "divisao"))
