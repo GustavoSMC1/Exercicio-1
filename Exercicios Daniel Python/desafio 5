@@ -1,0 +1,21 @@
+
+print("===== LISTA =====")
+L = [-10, 90, 50, 40]
+print("Lista original:", L)
+
+try:
+    L[2] = 89  
+    print("Lista após alteração:", L)
+except Exception as e:
+    print("Erro ao alterar lista:", e)
+
+
+print("\n===== TUPLA =====")
+T = (-10, 90, 50, 40)
+print("Tupla original:", T)
+
+try:
+    T[2] = 89 
+    print("Tupla após alteração:", T)
+except Exception as e:
+    print("Erro ao alterar tupla:", e)
