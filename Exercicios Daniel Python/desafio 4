@@ -1,0 +1,25 @@
+
+lista = [0, -14, 5, 100, -80, 40, -14]
+
+
+print("a) Lista dada:", lista)
+
+
+print("b) Lista inversa:", lista[::-1])
+
+
+lista.append(5)
+print("c) Após adicionar 5:", lista)
+
+
+lista.insert(3, 100)
+print("d) Apos adicionar 100 na posição 4:", lista)
+
+
+print("e) Quantidade de cada elemento:")
+for elem in set(lista):
+    print(f"{elem}: {lista.count(elem)} vez(es)")
+
+
+print("f) Ordem crescente:", sorted(lista))
+print("   Ordem decrescente:", sorted(lista, reverse=True))
