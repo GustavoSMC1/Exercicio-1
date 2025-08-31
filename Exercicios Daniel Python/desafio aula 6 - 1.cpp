@@ -12,30 +12,22 @@ def ler_matriz(nome):
         matriz.append(linha)
     return matriz, linhas, colunas
 
-
 def multiplicar_matrizes(A, B):
     m = len(A)
     n = len(A[0])
     p = len(B[0])
 
-    # inicializa matriz resultado com zeros
     C = [[0 for _ in range(p)] for _ in range(m)]
-
-    # cálculo da multiplicação
     for i in range(m):
         for j in range(p):
             for k in range(n):
                 C[i][j] += A[i][k] * B[k][j]
     return C
-
-
 def exibir_matriz(M, nome="Matriz"):
     print(f"\n{nome}:")
     for linha in M:
         print(linha)
 
-
-# Programa principal
 A, m, n = ler_matriz("A")
 B, p, q = ler_matriz("B")
 
